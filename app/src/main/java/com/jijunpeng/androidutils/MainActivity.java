@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.jijunpeng.androidutil.AppUtil;
+import com.jijunpeng.androidutils.library.AppUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView textView = (TextView) findViewById(R.id.text);
-        textView.append("\nVersionName: " + AppUtil.getVersionName(this) + "\n");
+        TextView text = (TextView) findViewById(R.id.text);
+        text.append("\n");
+        text.append("VersionNamee:" + AppUtil.getVersionName(this));
     }
 }

@@ -1,4 +1,4 @@
-package com.jijunpeng.androidutil;
+package com.jijunpeng.androidutils.library;
 
 import org.junit.Test;
 

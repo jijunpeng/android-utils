@@ -1,4 +1,4 @@
-package com.jijunpeng.androidutil;
+package com.jijunpeng.androidutils.library;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.jijunpeng.androidutil.test", appContext.getPackageName());
+        assertEquals("com.jijunpeng.androidutils.library.test", appContext.getPackageName());
     }
 }
