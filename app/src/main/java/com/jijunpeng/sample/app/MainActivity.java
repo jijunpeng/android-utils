@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.jijunpeng.androidutils.library.AppUtil;
+import com.jijunpeng.androidutils.library.ViewUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         //status bar height
         addText("Status bar height: " + AppUtil.getStatusBarHeight(this));
 
-
+        addText("Text View Parent: " + ViewUtil.getParentView(text));
     }
 
     private void addText(String string) {
