@@ -37,4 +37,20 @@ public class AppUtil {
         wm.getDefaultDisplay().getSize(result);
         return result;
     }
+
+    /**
+     *
+     * @param context
+     * @return status bar pixel height
+     */
+    public static int getStatusBarHeight(Context context) {
+        int statusBarHeight = -1;
+        //获取status_bar_height资源的ID
+        int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            //根据资源ID获取响应的尺寸值
+            statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);
+        }
+        return statusBarHeight;
+    }
 }

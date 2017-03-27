@@ -9,17 +9,30 @@ import com.jijunpeng.androidutils.library.AppUtil;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView text;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView text = (TextView) findViewById(R.id.text);
-        text.append("\n");
-        text.append("VersionnName: " + AppUtil.getVersionName(this));
-        text.append("\n");
-        text.append("VersionCode: " + AppUtil.getVersionCode(this));
-        text.append("\n");
+        text = (TextView) findViewById(R.id.text);
+        text.setText("");
+        //version name
+        addText("VersionnName: " + AppUtil.getVersionName(this));
+        //version code
+        addText("VersionCode: " + AppUtil.getVersionCode(this));
+        //screen width & height
         Point point = AppUtil.getScreenSize(this);
-        text.append("Width & Height: " + point.x + " & " + point.y);
+        addText("Width & Height: " + point.x + " & " + point.y);
+
+        //status bar height
+        addText("Status bar height: " + AppUtil.getStatusBarHeight(this));
+
+
+    }
+
+    private void addText(String string) {
+        text.append("\n");
+        text.append(string);
     }
 }
