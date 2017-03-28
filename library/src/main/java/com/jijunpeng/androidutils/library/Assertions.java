@@ -7,6 +7,7 @@ import java.util.Map;
 
 /**
  * Created by jijunpeng on 17/3/14.
+ * 摘自react native的工具类，供{@link PixelUtil} & {@link DisplayMetricsHolder}使用
  */
 
 public class Assertions {
@@ -22,7 +23,7 @@ public class Assertions {
     }
 
     public static <T> T assertNotNull(@Nullable T object) {
-        if(object == null) {
+        if (object == null) {
             throw new AssertionError();
         } else {
             return object;
@@ -30,7 +31,7 @@ public class Assertions {
     }
 
     public static <T> T assertNotNull(@Nullable T object, String explanation) {
-        if(object == null) {
+        if (object == null) {
             throw new AssertionError(explanation);
         } else {
             return object;
@@ -62,13 +63,13 @@ public class Assertions {
     }
 
     public static void assertCondition(boolean condition) {
-        if(!condition) {
+        if (!condition) {
             throw new AssertionError();
         }
     }
 
     public static void assertCondition(boolean condition, String explanation) {
-        if(!condition) {
+        if (!condition) {
             throw new AssertionError(explanation);
         }
     }

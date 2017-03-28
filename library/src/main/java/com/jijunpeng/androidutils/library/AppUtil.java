@@ -8,11 +8,17 @@ import android.view.WindowManager;
 
 /**
  * Created by jijunpeng on 17/3/13.
+ * App使用到的工具类，用于获取App的信息
  */
 
 public class AppUtil {
     private static String TAG = AppUtil.class.getSimpleName();
 
+    /**
+     * 获取版本信息
+     * @param context
+     * @return 版本
+     */
     public static String getVersionName(Context context) {
         try {
             return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
@@ -22,6 +28,11 @@ public class AppUtil {
         }
     }
 
+    /**
+     * 获取版本号
+     * @param context
+     * @return 版本号
+     */
     public static int getVersionCode(Context context) {
         try {
             return context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
@@ -31,6 +42,11 @@ public class AppUtil {
         }
     }
 
+    /**
+     * 获取屏幕大小
+     * @param context
+     * @return Point.x是屏幕宽度，Point.y是屏幕高度
+     */
     public static Point getScreenSize(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         Point result = new Point();
@@ -39,9 +55,9 @@ public class AppUtil {
     }
 
     /**
-     *
+     * 获取系统上的状态栏的高度
      * @param context
-     * @return status bar pixel height
+     * @return 状态栏高度的px值
      */
     public static int getStatusBarHeight(Context context) {
         int statusBarHeight = -1;

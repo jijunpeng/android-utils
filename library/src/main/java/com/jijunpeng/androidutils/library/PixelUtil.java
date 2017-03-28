@@ -4,6 +4,7 @@ import android.util.TypedValue;
 
 /**
  * Created by jijunpeng on 17/3/14.
+ * 摘自react native的工具类
  */
 
 public class PixelUtil {

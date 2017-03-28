@@ -19,6 +19,8 @@ import java.lang.reflect.Method;
 
 
 /**
+ * 摘自react native的工具类，供{@link PixelUtil}使用
+ *
  * Holds an instance of the current DisplayMetrics so we don't have to thread it through all the
  * classes that need it.
  * Note: windowDisplayMetrics are deprecated in favor of ScreenDisplayMetrics: window metrics
