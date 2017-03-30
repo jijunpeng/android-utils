@@ -3,8 +3,11 @@ package com.jijunpeng.androidutils.library;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.WindowManager;
+
+import static android.content.Context.TELEPHONY_SERVICE;
 
 /**
  * Created by jijunpeng on 17/3/13.
@@ -16,6 +19,7 @@ public class AppUtil {
 
     /**
      * 获取版本信息
+     *
      * @param context
      * @return 版本
      */
@@ -30,6 +34,7 @@ public class AppUtil {
 
     /**
      * 获取版本号
+     *
      * @param context
      * @return 版本号
      */
@@ -44,6 +49,7 @@ public class AppUtil {
 
     /**
      * 获取屏幕大小
+     *
      * @param context
      * @return Point.x是屏幕宽度，Point.y是屏幕高度
      */
@@ -56,6 +62,7 @@ public class AppUtil {
 
     /**
      * 获取系统上的状态栏的高度
+     *
      * @param context
      * @return 状态栏高度的px值
      */
@@ -68,5 +75,20 @@ public class AppUtil {
             statusBarHeight = context.getResources().getDimensionPixelSize(resourceId);
         }
         return statusBarHeight;
+    }
+
+    /**
+     * 获取手机设备唯一标识IMEI
+     * <p>
+     * 需要系统权限 android.permission.READ_PHONE_STATE
+     *
+     * @return 手机IMEI信息
+     */
+    public static String getDeviceIMEI(Context context, String defaultValue) {
+        String myIMEI = ((TelephonyManager) context.getSystemService(TELEPHONY_SERVICE)).getDeviceId();
+        if ("".equals(myIMEI) || myIMEI == null) {
+            myIMEI = defaultValue;
+        }
+        return myIMEI;
     }
 }

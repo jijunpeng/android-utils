@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         addText("Status bar height: " + AppUtil.getStatusBarHeight(this));
 
         addText("Text View Parent: " + ViewUtil.getParentView(text));
+        addText("IMEI: " + AppUtil.getDeviceIMEI(this, "999999999"));
     }
 
     private void addText(String string) {
