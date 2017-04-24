@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.jijunpeng.androidutils.library.AppUtil;
+import com.jijunpeng.androidutils.library.DateUtil;
 import com.jijunpeng.androidutils.library.ViewUtil;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         addText("Text View Parent: " + ViewUtil.getParentView(text));
         addText("IMEI: " + AppUtil.getDeviceIMEI(this, "999999999"));
+
+        Calendar c1 = Calendar.getInstance();
+        c1.set(Calendar.DAY_OF_MONTH, 1);
+        Calendar c2 = Calendar.getInstance();
+        addText("相隔天数：" + DateUtil.calculateTwoTime(c1.getTime(), c2.getTime(), Calendar.DAY_OF_MONTH));
     }
 
     private void addText(String string) {
